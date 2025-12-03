@@ -54,6 +54,17 @@ public class ApiController {
         return ResponseEntity.ok().body(null);
     }
 
+        // Step 11 - Add the idempotency key
+    var requestOptions = new RequestOptions();
+    requestOptions.setIdempotencyKey(UUID.randomUUID().toString());
+
+    log.info("PaymentsRequest {}", paymentRequest);
+    var response = paymentsApi.payments(paymentRequest, requestOptions); // Notice how we're adding this property to our existing code*
+    log.info("PaymentsResponse {}", response);
+    return ResponseEntity.ok().body(response);
+    }
+
+
     // Step 13 - Handle details call (triggered after Native 3DS2 flow)
     @PostMapping("/api/payments/details")
     public ResponseEntity<PaymentDetailsResponse> paymentsDetails(@RequestBody PaymentDetailsRequest detailsRequest) throws IOException, ApiException
