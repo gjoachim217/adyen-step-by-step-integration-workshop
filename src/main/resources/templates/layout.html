@@ -22,7 +22,37 @@
     <link rel="stylesheet" href="/css/application.css"/>
 
     <!-- Step 6 -->
-    <!-- Add Adyen.Web Components/Drop-in stylesheet and embed script -->
+    <!-- {
+  "merchantAccount": "ADYEN_MERCHANT_ACCOUNT",
+  "shopperReference": "your-shopper-reference-123",
+  "storedPaymentMethods": [
+    {
+      "brand": "upi_intent",
+      "id": "Z58FGTKBRCQ2WN27",
+      "mandate": {
+        "amount": "7005",
+        "amountRule": "max",
+        "billingAttemptsRule": "on",
+        "billingDay": "24",
+        "currency": "INR",
+        "endsAt": "2026-08-09",
+        "frequency": "adhoc",
+        "mandateId": "123abc-abc123...",
+        "providerId": "123abc-abc123...",
+        "remarks": "mandate name/remarks",
+        "startsAt": "2024-08-07",
+        "status": "active",
+        "txVariant": "upi_intent"
+        },
+        "supportedRecurringProcessingModels": [
+          "CardOnFile",
+          "Subscription",
+          "UnscheduledCardOnFile"
+        ],
+      "type": "upi"
+    }
+  ]
+}
 
 </head>
 <body>
